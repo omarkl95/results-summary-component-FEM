@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --grey: rgb(197, 192, 192);
+      --Light-red: hsl(0, 100%, 67%);
+      --Orange-yellow: hsl(39, 100%, 56%);
+      --Green-teal: hsl(166, 100%, 37%);
+      --Cobalt-blue: hsl(234, 85%, 45%);
+
+      --Light-slate-blue-Background: hsl(252, 100%, 67%);
+      --Light-royal-blue-Background: hsl(241, 81%, 54%);
+
+      --Violet-blue-Circle: hsla(256, 72%, 46%, 1);
+      --Persian-blue-Circle: hsla(241, 72%, 46%, 0);
+
+      --White: hsl(0, 0%, 100%);
+      --Pale-blue: hsl(221, 100%, 96%);
+      --Light-lavender: hsl(241, 100%, 89%);
+      --Dark-gray-blue: hsl(224, 30%, 27%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: whitesmoke;
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    .wrapper {
+      background-color: var(--White);
+    }
+
+    .card-One {
+      background-image: linear-gradient(var(--Light-slate-blue-Background),
+          var(--Light-royal-blue-Background));
+      border-radius: 0 0 50px 50px;
+      padding-bottom: 1rem;
+    }
+
+    .txt {
+      text-align: center;
+      color: var(--White);
+    }
+
+    .result {
+      padding: 2rem;
+    }
+
+    /* SCORE / CIRCLE */
+    .score {
+      background-image: linear-gradient(var(--Violet-blue-Circle),
+          var(--Persian-blue-Circle));
+      width: 40%;
+      margin: auto;
+      padding: 1.5rem;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .remark {
+      margin: 1rem 3rem;
+    }
+
+    /* changing the color of result, of100 */
+    .grey {
+      color: var(--grey);
+    }
+
+    .card-Two {
+      margin: 2rem;
+    }
+
+    section {
+      margin-top: 1.5rem;
+    }
+
+    .sect {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--Light-red-REACTION);
+      padding: 1.1rem;
+      border-radius: 10px;
+    }
+
+    .react {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .reaction {
+      background-color: rgb(250, 236, 236);
+    }
+
+    .red-H {
+      color: var(--Light-red);
+    }
+
+    /* memory */
+    .memory {
+      background-color: rgb(245, 237, 222);
+    }
+
+    .orange {
+      color: var(--Orange-yellow);
+    }
+
+    /* verbal */
+    .verbal {
+      background-color: rgb(224, 249, 237);
+    }
+
+    .cyan {
+      color: var(--Green-teal);
+    }
+
+    /* visual */
+    .visual {
+      background-color: rgb(233, 233, 246);
+    }
+
+    .cobalt {
+      color: var(--Cobalt-blue);
+    }
+
+    /* button */
+    button {
+      text-align: center;
+      width: 100%;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1rem;
+      background-color: var(--Dark-gray-blue);
+      color: white;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-image: linear-gradient(var(--Light-slate-blue-Background),
+          var(--Light-royal-blue-Background));
+    }
+
+    @media screen and (min-width: 450px) {
+      .container {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        border-radius: 25px;
+      }
+
+      .card-One {
+        width: 24rem;
+        border-radius: 25px;
+        height: 31.5rem;
+      }
+
+      .card-Two {
+        width: 20rem;
+      }
+
+      .score {
+        width: 50%;
+        padding: 3.5rem;
+      }
+
+      .result {
+        padding: 2.5rem;
+      }
+
+      .great {
+        margin: 2rem 0 1rem 0;
+      }
+
+      .remark {
+        margin: 1rem 5rem;
+      }
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="wrapper">
+      <div class="card-One">
+        <div class="txt">
+          <h2 class="result grey">Your Result</h2>
+
+          <div class="score">
+            <h1>76</h1>
+            <span class="of grey">of 100</span>
+          </div>
+
+          <h2 class="great">Great</h2>
+          <p class="remark grey">
+            You scored higher than 65% of the people who have taken these
+            tests.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-Two">
+        <h2 class="summary">Summary</h2>
+
+        <!-- reaction -->
+        <section>
+          <div class="sect reaction">
+            <div class="react">
+              <img src="assets/images/icon-reaction.svg" alt="icon-reaction.svg" />
+              <span class="red-H">Reaction</span>
+            </div>
+
+            <div class="pts">
+              <div class="dvd">
+                <span><b>80</b> <span class="grey">/ 100</span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- memory -->
+        <section>
+          <div class="sect memory">
+            <div class="react">
+              <img src="assets/images/icon-memory.svg" alt="icon-memory.svg" />
+              <span class="orange">Memory</span>
+            </div>
+
+            <div class="pts">
+              <div class="dvd">
+                <span><b>92</b> <span class="grey">/ 100</span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- verbal -->
+        <section>
+          <div class="sect verbal">
+            <div class="react">
+              <img src="assets/images/icon-verbal.svg" alt="icon-verbal.svg" />
+              <span class="cyan">Verbal</span>
+            </div>
+
+            <div class="pts">
+              <div class="dvd">
+                <span><b>61</b> <span class="grey">/ 100</span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- visual -->
+        <section>
+          <div class="sect visual">
+            <div class="react">
+              <img src="assets/images/icon-visual.svg" alt="icon-visual.svg" />
+              <span class="cobalt">Visual</span>
+            </div>
+
+            <div class="pts">
+              <div class="dvd">
+                <span><b>72</b> <span class="grey">/ 100</span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="btn">
+            <button class="continue">Continue</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Omar kamal</a>.
+  </div>
+</body>
+
+</html>
